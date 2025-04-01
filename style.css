@@ -1,11 +1,12 @@
 /* For Fonts */
-@import url('https://fonts.googleapis.com/css2?family=poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600;700&display=swap');
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "poppins", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 :root {
     --accent: #5d50fa;
@@ -138,6 +139,7 @@ nav.sticky {
 .hero-headlines h1{
     font-size: 38px;
     font-weight: bold;
+    font-family: 'Lobster', cursive;
 }
 .hero-headlines p{
     font-size: 20px;
@@ -190,6 +192,7 @@ nav.sticky {
     width: 490px;
     text-align: center;
     margin-top: 62px;
+    font-family: 'Lobster', cursive;
 }
 .about-subline{
     font-size: 25px;
@@ -249,6 +252,7 @@ nav.sticky {
 .collection h1 {
     font-size: 45px;
     font-weight: bold;
+    font-family: 'Lobster', cursive;
 }
 .collection-container {
     display: flex;
@@ -361,6 +365,7 @@ nav.sticky {
     font-size: 39px;
     font-weight: bold;
     margin-bottom: 20px;
+    font-family: 'Lobster', cursive;
 }
 .review-container{
     display: flex;
@@ -432,6 +437,7 @@ nav.sticky {
 }
 .callout h2{
     font-size: 28px;
+    font-family: 'Lobster', cursive;
 }
 .callout-description{
     font-size: 21px;
@@ -492,6 +498,27 @@ nav.sticky {
 .footer-brand:hover{
     opacity: 0.6s;
 }
+.whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+.whatsapp-chat img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-chat img:hover {
+    transform: scale(1.1);
+}
+
 .socials{
     display: flex;
     gap: 18px;
@@ -549,3 +576,270 @@ nav.sticky {
 .collection-footer {
     margin-top: 300px;
 }
+
+/* Contact Page */
+.contact {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(img/contact4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contact h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+}
+.contact p {
+    font-size: 18px;
+    width: 515px;
+    text-align: center;
+}
+.car-select {
+    background-color: #dae5fe;
+    width: 90vw;
+    height: 153px;
+    border-radius: 32px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 72px;
+}
+.car-select-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+
+}
+.car-select-item label {
+    font-size: 20px;
+    font-weight: bold;
+}
+.car-select-input, #car-price {
+    width: 100%;
+    max-width: 250px; /* Ensures inputs are not too big */
+    height: 35px; /* Smaller height */
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    outline: none;
+}
+#car-price {
+    cursor: text;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+}
+.contact-form input {
+    height: 60px;
+    border: none;
+    border-bottom: 1px solid var(--black);
+    font-size: 16px;
+    color: var(--black);
+    font-weight: 600;
+    background-color: white;
+    outline: none;
+}
+.contact-form button {
+    width: 260px;
+    height: 50px;
+    border-radius: 0px;
+}
+.contact-footer {
+    margin-top: 300px;
+}
+
+
+/* Laptop and Tablet */
+@media (max-width: 1024px) and (min-width: 0px) {
+    nav {
+        padding: 3opx 20px;
+    }
+    .brand h1 {
+        font-size: 24px;
+    }
+    .menu {
+        gap: 28px
+    }
+    .menu a {
+        font-size: 20px;
+    }
+    .hero-page {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-headlines {
+        align-items: center;
+        gap: 11px;
+        margin-bottom: 30px;
+    }
+
+    /* About */
+    .about {
+        margin-bottom: 700px;
+    }
+    .about-subline {
+        width: 567px;
+    }
+    .width-info {
+        gap: 12px;
+        justify-content: center;
+        top: 350px;
+    }
+    .about-info-item {
+        width: 358px;
+        height: 450px;
+    }
+    /* Collection */
+    .collection-container {
+        gap: 12px;
+    }
+    .collection-car-item {
+        width: 358px;
+        height: 450px;
+    }
+    .cpllection-car-item h2 {
+        font-size: 24px;
+    }
+    /* Review */
+    .review {
+        margin-top: 100px;
+    }
+    .review h1 {
+        font-size: 48px;
+    }
+    .review-container {
+        gap: 12px;
+    }
+    .review-item {
+        width: 358px;
+        height: 339px;
+    }
+    .review-item p {
+        font-size: 20px;
+    }
+    .review-people {
+        margin-top: 30px;
+    }
+    /* Footer */
+    .index-footer {
+        margin-top: 300px;
+    }
+    .callout {
+        padding: 50px;
+        background-color: var(--accent);
+        background-image: none;
+    }
+    .callout h2 {
+        font-size: 40px;
+        width: 380px;
+        text-align: center;
+    }
+    .callout-description {
+        width: 100%;
+        font-size: 20px;
+    }
+    /* Collection Page */
+    .collection-category {
+        padding: 0px 20px;
+    }
+    .collection-car-item-page {
+        height: 488px;
+    }
+    /* Contact Page */
+    .contact h1 {
+        font-size: 40px;
+    }
+    .contact p {
+        width: 567px;
+        text-align: center;
+    }
+    .car-select {
+        width: 95vw;
+        gap: 44px;
+    }
+    .car-select-input {
+        width: 190px;
+        height: 45px;
+    }
+}
+
+/* Phone */
+@media (max-width: 767px) and (min-width: 0px) {
+    /* Navbar */
+    nav {
+        padding: 20px 30px;
+        width: 100%;
+    }
+    nav .btn {
+        display: block;
+        color: var(--black);
+        font-size: 24px;
+    }
+    nav .menu {
+        position: fixed;
+        background: var(--accent);
+        flex-direction: column;
+        min-width: 80%;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        padding: 50px;
+        transition: 0.5s;
+        transition-property: right;
+    }
+    nav .menu.active {
+        right: 0;
+    }
+    nav .menu .close-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 25px;
+        color: white;
+    }
+    nav .menu a {
+        display: block;
+        font-size: 20px;
+        margin: 20px;
+        padding: 0 15px;
+        color: white;
+    }
+    nav .btn-2 {
+        display: none;
+    }
+    /* Hero Page */
+    .hero-page {
+        padding: 0px 20px;
+        margin-top: 120px;
+    }
+    .hero-headlines {
+        width: 100%;
+    }
+    .hero-headlines h1 {
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

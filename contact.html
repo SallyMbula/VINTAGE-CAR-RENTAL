@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--use for responsiveness-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link to css-->
+    <link rel="stylesheet" href="style.css">
+    <!--link to js -->
+    <script src="index.js" defer></script>
+    <!--Link To Scroll Reveal, in description-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--For Icons-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>VINTAGE CAR RENTALS</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav>
+        <a href="index.html" class="brand">
+           <h1>Metro<b class="accent">Rentally</b></h1> 
+        </a>
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+            <a href="index.php">HOME</a>
+            <a href="collection.html">CARS</a>
+            <a href="index.php">ABOUT</a>
+            <a href="index.php">REVIEWS</a>
+        </div>
+
+        <button class="btn-2" onclick="window.location.href='contact.html'">
+           Get Started 
+        </button>
+
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+    </nav>
+    <!--Navbar End-->
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h1>Get in Touch for Your Dream Ride</h1>
+        <p>
+            Have questions or need assistance? Our team is here to help you find the
+            perfect car for your adventure.
+        </p>
+
+        <form action="booking.php" method="POST">
+            <!-- Hidden fields for capturing query string values -->
+            <input type="hidden" name="access_key" value="b74159cd-6cc3-4202-8d99-eb0afe9633ad">
+            <input type="hidden" name="replyTo" value="sallymbula0@gmail.com">
+            <!-- Hidden car price field -->
+            <input type="hidden" name="car-price" id="hidden-car-price"> 
+
+            <div class="car-select">
+                <div class="car-select-item">
+                    <label for="location">Location:</label>
+                    <select name="location" class="car-select-input" id="location">
+                        <option value="California">California</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="New Jersey">New Jersey</option>
+                        <option value="New York">New York</option>
+                    </select>
+                </div>
+        
+                <div class="car-select-item">
+                    <label for="car-type">Car to rent:</label>
+                    <select name="car-type" class="car-select-input" id="car-type">
+                        <option value="'62 Jaguar XKE Roadster">'62 Jaguar XKE Roadster</option>
+                        <option value="Toyota Sport 800">Toyota Sport 800</option>
+                        <option value="'72 Ford Bronco">'72 Ford Bronco</option>
+                        <option value="'61 Ferrari 250">'61 Ferrari 250</option>
+                    </select>
+                </div>
+
+
+                <!-- This field is now just for displaying the price, set dynamically -->
+                <div class="car-select-item">
+                    <label for="car-price">Price (Ksh):</label>
+                    <input type="text" id="car-price" class="car-select-input" name="car-price" placeholder="Enter price" required />
+
+                </div>
+
+                <div class="car-select-item">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" class="car-select-input" />
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="phone" name="phone" placeholder="Phone" required />
+                <button type="submit" class="btn-2">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="index-footer">
+        <div class="callout">
+            <h2>Let's drive with MetroRentally Today!</h2>
+            <p class="callout-description">
+                Need assistance or ready to reserve your wheels? Contact us now for 
+                prompt service and effortless booking!
+            </p>
+            <div class="callout-button">
+                <button class="btn-2 btn-callout" onclick="window.location.href='collection.html'">
+                    <p>Check Our Cars</p>
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+
+                <button class="btn-2 btn-callout btn-callout-black" onclick="window.location.href='contact.html'">
+                    <p>Book Now</p>
+                    <i class="fa fa-phone"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="/" class="footer-brand">Metro<b class="accent">Rentally</b></a>
+            <div class="socials">
+                <a href="/" class="social-item">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a> 
+                <a href="/" class="social-item">
+                    <i class="fa-brands fa-instagram"></i>
+                </a> 
+                <a href="/" class="social-item">
+                    <i class="fa-brands fa-twitter"></i>
+                </a> 
+                <a href="/" class="social-item">
+                    <i class="fa-brands fa-telegram"></i>
+                </a> 
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- JavaScript to capture and pass car price -->
+    <script>
+        document.querySelector("form").addEventListener("submit", function () {
+            // Get the selected car price
+            const carPrice = document.getElementById("car-price").value;
+
+            // Set the hidden input value for car-price
+            document.getElementById("hidden-car-price").value = carPrice;
+        });
+
+        // Function to get query string parameters 
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                location: params.get('location'),
+                car_name: params.get('car_name'),
+                car_price: params.get('car_price'),
+            };
+        }
+
+        // Capture the query string parameters
+        const { location, car_name, car_price } = getQueryParams();
+
+        // Pre-fill the form fields on the contact page if query parameters exist
+        if (location) {
+            document.querySelector("select[name='location']").value = location;
+        }
+
+        if (car_name) {
+            document.querySelector("select[name='car-type']").value = car_name;
+        }
+
+        if (car_price) {
+            document.querySelector("#car-price").value = `Ksh ${car_price}`;  // Display formatted price
+            document.querySelector("#hidden-car-price").value = car_price;  // Hidden input for submission
+        }
+    </script>
+
+</body>
+</html>
